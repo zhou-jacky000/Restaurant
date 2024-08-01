@@ -18,6 +18,9 @@ app.get('/restaurant/:id', (req, res) => {
   res.send('Read restaurant ID: ' + req.params.id)
 })
 
+// 使用use載入靜態文件檔案(例如json檔)
+app.use(express.static('public'))
+
 // 讓應用監聽特定的port
 const port = 3000
 app.listen(port, () =>{
