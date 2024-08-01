@@ -2,10 +2,22 @@
 const express = require('express')
 // 創建express應用
 const app = express()
+
 // 定義一個路由，處理根目錄的 GET 請求
 app.get('/',(req,res) =>{
-  res.send('restaurant List')
+  res.redirect('/restaurant')
 })
+
+// 定義一個路由，處理/restaurant路徑的 GET 請求
+app.get('/restaurant', (req, res) => {
+  res.send('Listening restaurant')
+})
+
+// 定義一個路由，處理/restaurant路徑的 GET 請求
+app.get('/restaurant/:id', (req, res) => {
+  res.send('Read restaurant ID: ' + req.params.id)
+})
+
 // 讓應用監聽特定的port
 const port = 3000
 app.listen(port, () =>{
