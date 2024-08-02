@@ -3,6 +3,13 @@ const express = require('express')
 // 創建express應用
 const app = express()
 
+// 載入Handlebars模組
+const { engine } = require('express-handlebars')
+// 在Express中啟用hbs.engine
+app.engine('.hbs', engine({ extname: '.hbs' }));
+app.set('view engine', '.hbs');
+app.set('views', './views');
+
 // 定義一個路由，處理根目錄的 GET 請求
 app.get('/',(req,res) =>{
   res.redirect('/restaurant')
@@ -10,7 +17,7 @@ app.get('/',(req,res) =>{
 
 // 定義一個路由，處理/restaurant路徑的 GET 請求
 app.get('/restaurant', (req, res) => {
-  res.send('Listening restaurant')
+  res.send('index')
 })
 
 // 定義一個路由，處理/restaurant路徑的 GET 請求
