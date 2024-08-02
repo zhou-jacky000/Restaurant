@@ -10,6 +10,10 @@ app.engine('.hbs', engine({ extname: '.hbs' }));
 app.set('view engine', '.hbs');
 app.set('views', './views');
 
+
+// 載入movies.jons的資料，且我們需要的資料位於json檔的result所以後方要加
+const restaurants = require('./public/jsons/restaurant.json').results
+
 // 定義一個路由，處理根目錄的 GET 請求
 app.get('/',(req,res) =>{
   res.redirect('/restaurant')
@@ -17,7 +21,7 @@ app.get('/',(req,res) =>{
 
 // 定義一個路由，處理/restaurant路徑的 GET 請求
 app.get('/restaurant', (req, res) => {
-  res.send('index')
+  res.render('index' ,{restaurants})
 })
 
 // 定義一個路由，處理/restaurant路徑的 GET 請求
