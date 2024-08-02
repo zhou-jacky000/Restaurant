@@ -21,7 +21,10 @@ app.get('/',(req,res) =>{
 
 // 定義一個路由，處理/restaurant路徑的 GET 請求
 app.get('/restaurant', (req, res) => {
-  res.render('index' ,{restaurants})
+  // res.render('index' ,{restaurants})
+  const keyword = req.query.keyword || ''
+  const matchRestaurant = restaurants.filter((rs) => rs.name.toLowerCase().includes(keyword.toLowerCase()))
+  res.render('index', { restaurants: matchRestaurant, keyword })
 })
 
 // 定義一個路由，處理/restaurant路徑的 GET 請求
