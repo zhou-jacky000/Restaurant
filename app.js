@@ -26,7 +26,10 @@ app.get('/restaurant', (req, res) => {
 
 // 定義一個路由，處理/restaurant路徑的 GET 請求
 app.get('/restaurant/:id', (req, res) => {
-  res.send('Read restaurant ID: ' + req.params.id)
+  // 1.res.send('Read restaurant ID: ' + req.params.id)
+  // 2.新增動態路由語帶入資料
+  const restaurant = restaurants.find((rs) => rs.id.toString() === req.params.id)
+  res.render('show', { restaurant })
 })
 
 // 使用use載入靜態文件檔案(例如json檔)
