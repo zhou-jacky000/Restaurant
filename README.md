@@ -13,11 +13,11 @@ it's a website you can search favorite restaurant and get the detail information
 ### Installing
 1. open your `terminal`, clone the repository:
 ```
-$ git clone https://github.com/jacky1a2a3a4a/Restaurant-List_Demo
+$ git clone https://github.com/zhou-jacky000/Restaurant.git
 ```
-2. Move to Restaurant-List_Demo directory:
+2. Move to Restaurant-List directory:
 ```
-$ cd /Restaurant-List_Demo
+$ cd /Restaurant
 ```
 3. Restore the dependencies: 
 ```
@@ -32,20 +32,20 @@ $ npm run dev
 2. Browse the URL `http://localhost:3000` on the terminal.
 
 ### Dependencies:
-* Express: "^4.18.2"
-* Express-handlebars: "^7.1.2"
+* Express: "^4.19.2"
+* Express-handlebars: "^7.1.3"
 
 ### Includes:
-* Bootstrap: 5.1.2
-* Font Awesome 6.5.1
+* Bootstrap: v5.1.3
+* Font Awesome 6.0.0
 
 ### Static files:
 
 ```
-Restaurant-List_Demo
+Restaurant
 ├── public/
 │   ├── stylesheets/
-│       └── main.css
+│       └── index.css
 │   └── jsons/
 └──     └── restaurants.json
 ```
@@ -56,6 +56,3 @@ Restaurant-List_Demo
 "start": "node app.js"
 "dev": "nodemon app.js"
 ```
-## Authors
-* [Alpha Camp](https://tw.alphacamp.co/) - provide project template.
-* [Jacky1a2a3a4a](https://gist.github.com/jacky1a2a3a4a) - build this project with express.js based on provided project template.
